@@ -1,0 +1,240 @@
+/* @font-face {
+    font-family: 'THSarabunNew';
+    src: url('/fonts/thsarabunnew-webfont.eot');
+    src: url('/fonts/thsarabunnew-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/thsarabunnew-webfont.woff') format('woff'), url('/fonts/thsarabunnew-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('/fonts/thsarabunnew_bolditalic-webfont.eot');
+    src: url('/fonts/thsarabunnew_bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/thsarabunnew_bolditalic-webfont.woff') format('woff'), url('/fonts/thsarabunnew_bolditalic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('/fonts/thsarabunnew_italic-webfont.eot');
+    src: url('/fonts/thsarabunnew_italic-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/thsarabunnew_italic-webfont.woff') format('woff'), url('/fonts/thsarabunnew_italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('/fonts/thsarabunnew_bold-webfont.eot');
+    src: url('/fonts/thsarabunnew_bold-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/thsarabunnew_bold-webfont.woff') format('woff'), url('/fonts/thsarabunnew_bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+} */
+
+body {
+    font-family: "THSarabunNew";
+}
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    table#tb-display thead tr th {
+        /* text-align: center; */
+        font-size: 30px;
+    }
+    table#tb-display tbody tr td {
+        /* text-align: center; */
+        font-size: 40px;
+    }
+    table#tb-hold tbody tr td {
+        text-align: center;
+        font-size: 40px;
+    }
+    table#tb-que-wait tbody tr td {
+        text-align: center;
+        font-size: 40px;
+    }
+    #marquee {
+        font-size: 40px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    table#tb-display thead tr th {
+        /* text-align: center; */
+        font-size: 50px;
+    }
+    table#tb-display tbody tr td {
+        /* text-align: center; */
+        font-size: 60px;
+    }
+    table#tb-hold tbody tr td {
+        text-align: center;
+        font-size: 60px;
+    }
+    table#tb-que-wait tbody tr td {
+        text-align: center;
+        font-size: 60px;
+    }
+    #marquee {
+        font-size: 50px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1920px) {
+    table#tb-display thead tr th {
+        /* text-align: center; */
+        font-size: 70px;
+    }
+    table#tb-display tbody tr td {
+        /* text-align: center; */
+        font-size: 80px;
+    }
+    table#tb-hold tbody tr td {
+        text-align: center;
+        font-size: 80px;
+    }
+    table#tb-que-wait tbody tr td {
+        text-align: center;
+        font-size: 80px;
+    }
+    #marquee {
+        font-size: 80px;
+    }
+}
+
+.container {
+    width: auto;
+}
+
+/* body {
+    background-color: #204d74;
+} */
+
+table {
+    border-spacing: 5px;
+    border-collapse: unset;
+    border-spacing: 0 10px;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 0px;
+}
+
+/* table#tb-display thead tr th.th-right {
+    border-top: 5px solid #ffffff !important;
+    border-bottom: 5px solid #ffffff !important;
+    border-right: 5px solid #ffffff !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+table#tb-display thead tr th.th-left {
+    border-top: 5px solid #ffffff !important;
+    border-bottom: 5px solid #ffffff !important;
+    border-left: 5px solid #ffffff !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+table#tb-display tbody tr td.td-left {
+    border-top: 5px solid #ffffff !important;
+    border-bottom: 5px solid #ffffff !important;
+    border-left: 5px solid #ffffff !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+table#tb-display tbody tr td.td-right {
+    border-top: 5px solid #ffffff !important;
+    border-bottom: 5px solid #ffffff !important;
+    border-right: 5px solid #ffffff !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+table#tb-display thead tr {
+    width: 50%;
+    border-radius: 15px;
+    border: 5px solid white;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+table#tb-display tbody tr {
+    width: 50%;
+    border-radius: 15px;
+    border: 5px solid white;
+    background-color: #666666;
+    color: #ffffff;
+    font-weight: bold;
+} */
+
+/* .display-view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+} */
+
+/* table#tb-hold tbody tr td.td-left{
+    width: 50%;
+    border-top: 5px solid #ffffff !important;
+    border-bottom: 5px solid #ffffff !important;
+    border-right: 5px solid #ffffff !important;
+    border-left: 5px solid #ffffff !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #666666;
+    color: #ffffff;
+    vertical-align: middle;
+}
+
+table#tb-hold tbody tr td.td-right{
+    width: 50%;
+    border-top: 0px solid white !important;
+    color: yellow;
+    font-weight: bold;
+    vertical-align: middle;
+} */
+
+table#tb-hold tbody tr.odd td {
+    border-top: 0px;
+}
+
+table#tb-que-wait tbody tr.odd td {
+    border-top: 0px;
+}
+
+table#tb-hold {
+    border-spacing: 5px;
+    border-collapse: unset;
+    border-spacing: 0 0px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+table#tb-que-wait {
+    border-spacing: 5px;
+    border-collapse: unset;
+    border-spacing: 0 0px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+table#tb-display {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.table>tbody>tr>td{
+    padding: 0px;
+}

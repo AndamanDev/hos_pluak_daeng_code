@@ -1,0 +1,125 @@
+version: '3'
+services:
+
+  db:
+    image: mariadb
+    container_name: lemp_mariadb
+    restart: always
+    volumes:
+      - ./mysql/initdb/:/docker-entrypoint-initdb.d
+      - ./mysql/data/:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_db
+      - MYSQL_DATABASE=que-pmh
+      - MYSQL_USER=andaman
+      - MYSQL_PASSWORD=b8888888
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  php:
+    build: ./php
+    container_name: lemp_php-fpm
+    restart: always
+    volumes:
+      - ../:/var/www/html
+      - ./php/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./logs/php-fpm:/var/log/php-fpm
+      #- /etc/localtime:/etc/localtime:ro
+    expose:
+      - "9000"
+    depends_on:
+      - redis
+    networks:
+      - backend
+    
+  nginx:
+    image: nginx:stable-alpine
+    container_name: lemp_nginx
+    restart: always
+    volumes:
+      - ../:/var/www/html
+      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./logs/nginx:/var/log/nginx
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - php
+    ports:
+      - 8081:80
+    networks:
+      - backend
+      - frontend
+  nginx2:
+    image: nginx:stable-alpine
+    container_name: lemp_nginx2
+    restart: always
+    volumes:
+      - ../:/var/www/html
+      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./logs/nginx:/var/log/nginx
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - php
+    ports:
+      - 80:80
+    networks:
+      - backend
+      - frontend
+
+  memcached:
+    image: memcached:latest
+    container_name: lemp_memcached
+    ports:
+      - "11211:11211"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+
+  redis:
+    image: redis
+    container_name: lemp_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis:/data
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    networks:
+      - backend
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: lemp_phpmyadmin
+    restart: always
+    ports:
+      - "8000:80"
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - backend
+
+  node:
+    build: ./node
+    container_name: lemp_node
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    links:
+      - db
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
