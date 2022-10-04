@@ -1,5 +1,5 @@
-var host = 'http://' + window.location.hostname + ':3001'; // 'https://node-que-pmh.herokuapp.com';
-var socket = io(host);
+var host = 'http://' + window.location.hostname; // 'https://node-que-pmh.herokuapp.com';
+var socket = io(host, { path: '/node/socket.io' });
 $(function () {
     socket.on('connect', () => {
             console.warn('connect: ' + socket.id);
