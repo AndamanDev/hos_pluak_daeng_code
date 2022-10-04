@@ -5,7 +5,7 @@ use yii\web\AssetBundle;
 
 class jPlayerAsset extends AssetBundle 
 {
-    public $sourcePath = '@bower/jplayer/dist';
+    public $sourcePath = '@npm/jplayer/dist';
 
     public $js = [
         'jplayer/jquery.jplayer.min.js',
