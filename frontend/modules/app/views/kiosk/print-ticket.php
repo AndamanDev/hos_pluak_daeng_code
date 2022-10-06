@@ -15,7 +15,7 @@ $this->registerCssFile("@web/css/80mm.css", [
     'depends' => [BootstrapAsset::className()],
 ]); */
 
-$baseUrl = 'http://pluakdaeng-queue.dyndns.info:8081';
+$baseUrl = Url::base(true);
 
 $this->registerCss("
 div#bcTarget {
